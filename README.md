@@ -1,2 +1,121 @@
-# movie-dataset-mining
-Data Mining course project — building a dataset of 5,000 movies (Q/R titles) using IMDb, Wikipedia scraping, and OMDb API.
+# 🎬 Movie Dataset Mining
+
+> Data Mining course project — building a dataset of 5,000 movies with titles starting with **Q or R**, combining IMDb, Wikipedia scraping, and the OMDb API.
+
+---
+
+## 👥 Students
+
+| Name | ID |
+|------|----|
+| Itamar Rot | 211994025 |
+| Nir Avrahamoff | 209413053 |
+
+---
+
+## 📁 Repository Structure
+
+```
+movie-dataset-mining/
+│
+├── ProjectPart1.ipynb        # Main notebook — full data collection pipeline
+├── dataset.csv               # Final cleaned dataset (5,000 movies, 13 columns)
+├── dataset_raw.csv           # Raw data before financial cleaning
+├── report.pdf                # Full project report
+└── README.md                 # This file
+```
+
+---
+
+## 🗂️ Dataset Overview
+
+The final dataset contains **5,000 movies** collected from three sources:
+
+| Field | Type | Source |
+|-------|------|--------|
+| `tconst` | string | IMDb |
+| `primaryTitle` | string | IMDb |
+| `startYear` | int | IMDb |
+| `genres` | list | IMDb |
+| `lead_actors_ids` | list | IMDb |
+| `runtimeMinutes` | int | IMDb |
+| `averageRating` | float | IMDb |
+| `numVotes` | int | IMDb |
+| `Language` | string | OMDb / Wikipedia |
+| `Country` | string | OMDb / Wikipedia |
+| `budget` | float (USD millions) | Wikipedia |
+| `BoxOffice` | float (USD millions) | Wikipedia |
+| `plot` | string | OMDb / Wikipedia |
+
+---
+
+## ⚙️ How It Works
+
+![Pipeline](pipeline.png)
+
+The data collection pipeline runs in 4 steps:
+
+1. **Load** — Download IMDb public datasets (`title.basics`, `title.ratings`, `title.principals`)
+2. **Filter** — Keep only movies starting with Q or R, released by 2024, between 60–300 minutes. Sort by `numVotes` and take the top 5,000
+3. **Enrich** — For the first 1,000 movies: OMDb API for `Language`/`Country`/`plot`, Wikipedia for `budget`/`BoxOffice`. For movies 1,001–5,000: Wikipedia only
+4. **Clean** — Standardize all financial values to USD millions, fix data types, export to CSV
+
+---
+
+## 🚀 How to Run
+
+### Requirements
+
+```bash
+pip install pandas requests beautifulsoup4
+```
+
+### Steps
+
+1. Clone the repository:
+```bash
+git clone https://github.com/YOUR_USERNAME/movie-dataset-mining.git
+cd movie-dataset-mining
+```
+
+2. Open the notebook:
+```bash
+jupyter notebook ProjectPart1.ipynb
+```
+
+3. Set your OMDb API key in the notebook:
+```python
+OMDB_API_KEY = "your_key_here"
+```
+
+4. Run all cells in order.
+
+> ⚠️ **Note:** The full pipeline takes several hours to run due to web scraping. The final `dataset.csv` is already included in the repository so you don't need to re-run everything.
+
+---
+
+## 📊 Missing Values Summary
+
+| Column | Missing % |
+|--------|-----------|
+| `tconst` | 0.00% |
+| `primaryTitle` | 0.00% |
+| `startYear` | 0.00% |
+| `genres` | 0.16% |
+| `lead_actors_ids` | 6.98% |
+| `runtimeMinutes` | 0.00% |
+| `averageRating` | 0.00% |
+| `numVotes` | 0.00% |
+| `Language` | 46.32% |
+| `Country` | 46.00% |
+| `budget` | 83.58% |
+| `BoxOffice` | 79.30% |
+| `plot` | 55.12% |
+
+---
+
+## 📝 Notes
+
+- The OMDb API key is visible in the notebook intentionally, to allow full reproduction of the pipeline. It is a dedicated educational-use key.
+- `budget` and `BoxOffice` high missingness is expected — most films do not publicly disclose financial data.
+- `Language` and `Country` missingness is due to movies without a dedicated Wikipedia page or with non-standard URL formats.
