@@ -1,19 +1,8 @@
-# 🎬 Movie Dataset Mining
+# Movie Dataset Mining
 
 > Data Mining course project — building a dataset of 5,000 movies with titles starting with **Q or R**, combining IMDb, Wikipedia scraping, and the OMDb API.
 
----
-
-## 👥 Students
-
-| Name | ID |
-|------|----|
-| Itamar Rot | 211994025 |
-| Nir Avrahamoff | 209413053 |
-
----
-
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 movie-dataset-mining/
@@ -27,7 +16,7 @@ movie-dataset-mining/
 
 ---
 
-## 🗂️ Dataset Overview
+## Dataset Overview
 
 The final dataset contains **5,000 movies** collected from three sources:
 
@@ -49,7 +38,7 @@ The final dataset contains **5,000 movies** collected from three sources:
 
 ---
 
-## ⚙️ How It Works
+## How It Works
 
 ![Pipeline](pipeline.png)
 
@@ -62,7 +51,7 @@ The data collection pipeline runs in 4 steps:
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### Requirements
 
@@ -94,7 +83,7 @@ OMDB_API_KEY = "your_key_here"
 
 ---
 
-## 📊 Missing Values Summary
+## Missing Values Summary
 
 | Column | Missing % |
 |--------|-----------|
@@ -114,7 +103,7 @@ OMDB_API_KEY = "your_key_here"
 
 ---
 
-## 📝 Notes
+## Notes
 
 - The OMDb API key is visible in the notebook intentionally, to allow full reproduction of the pipeline. It is a dedicated educational-use key.
 - `budget` and `BoxOffice` high missingness is expected — most films do not publicly disclose financial data.
