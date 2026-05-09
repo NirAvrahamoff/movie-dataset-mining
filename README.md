@@ -95,15 +95,15 @@ OMDB_API_KEY = "your_key_here"
 | `primaryTitle` | 0.00% |
 | `startYear` | 0.00% |
 | `genres` | 0.16% |
-| `lead_actors_ids` | 6.98% |
+| `lead_actors_ids` | 6.96% |
 | `runtimeMinutes` | 0.00% |
 | `averageRating` | 0.00% |
 | `numVotes` | 0.00% |
-| `Language` | 46.32% |
-| `Country` | 46.00% |
+| `Language` | 44.08% |
+| `Country` | 43.64% |
 | `budget` | 83.58% |
-| `BoxOffice` | 79.30% |
-| `plot` | 55.12% |
+| `BoxOffice` | 79.28% |
+| `plot` | 51.88% |
 
 ---
 
