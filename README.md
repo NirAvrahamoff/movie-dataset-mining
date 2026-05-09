@@ -58,7 +58,6 @@ The data collection pipeline runs in 4 steps:
 - Jupyter Notebook
   
 - Libraries:
-pip install pandas requests beautifulsoup4
 ```bash
 pip install pandas requests beautifulsoup4
 ```
