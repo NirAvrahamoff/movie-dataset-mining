@@ -7,11 +7,11 @@
 ```
 movie-dataset-mining/
 │
-├── Data_Mining_Project.ipynb    # Main notebook — full data collection pipeline    
-├── dataset.csv               # Final cleaned dataset (5,000 movies, 13 columns)
-├── dataset_raw.csv           # Raw data before financial cleaning
-├── report.pdf                # Full project report
-└── README.md                 # This file
+├── Data_Mining_Project.ipynb  # Main notebook — full data collection pipeline    
+├── dataset.csv                # Final cleaned dataset (5,000 movies, 13 columns)
+├── dataset_raw.csv            # Raw data before financial cleaning
+├── report.pdf                 # Full project report
+└── README.md                  # This file
 ```
 
 ---
