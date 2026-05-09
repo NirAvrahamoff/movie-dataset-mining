@@ -40,7 +40,9 @@ The final dataset contains **5,000 movies** collected from three sources:
 
 ## How It Works
 
-![Pipeline](pipeline.png)
+<div align="center">
+<img src="https://raw.githubusercontent.com/NirAvrahamoff/movie-dataset-mining/f235dbdd664a70f89231b2a36ee4c4092eb62854/pipeline.png" width="900">
+</div>
 
 The data collection pipeline runs in 4 steps:
 
@@ -66,8 +68,7 @@ pip install pandas requests beautifulsoup4
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/movie-dataset-mining.git
-cd movie-dataset-mining
+git clone https://github.com/NirAvrahamoff/movie-dataset-mining.git
 ```
 
 2. Open the notebook:
