@@ -61,7 +61,7 @@ The data collection pipeline runs in 4 steps:
   
 - Libraries:
 ```bash
-pip install pandas requests beautifulsoup4
+pip install pandas requests beautifulsoup4 python-dotenv
 ```
 
 ### Steps
@@ -76,10 +76,12 @@ git clone https://github.com/NirAvrahamoff/movie-dataset-mining.git
 jupyter notebook Data_Mining_Project.ipynb
 ```
 
-3. Set your OMDb API key in the notebook:
-```python
-OMDB_API_KEY = "your_key_here"
+3. Create a `.env` file in the project folder:
+ ```
+OMDB_API_KEY=your_key_here
 ```
+> You can get a free key at https://www.omdbapi.com/
+
 
 4. Run all cells in order.
 
@@ -109,6 +111,6 @@ OMDB_API_KEY = "your_key_here"
 
 ## Notes
 
-- The OMDb API key is visible in the notebook intentionally, to allow full reproduction of the pipeline. It is a dedicated educational-use key.
+- The OMDb API key is stored in a `.env` file (not included in the repository). Create one with your own key from https://www.omdbapi.com/
 - `budget` and `BoxOffice` high missingness is expected — most films do not publicly disclose financial data.
 - `Language` and `Country` missingness is due to movies without a dedicated Wikipedia page or with non-standard URL formats.
