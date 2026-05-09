@@ -73,7 +73,7 @@ git clone https://github.com/NirAvrahamoff/movie-dataset-mining.git
 
 2. Open the notebook:
 ```bash
-jupyter notebook ProjectPart1.ipynb
+jupyter notebook Data_Mining_Project.ipynb
 ```
 
 3. Set your OMDb API key in the notebook:
